@@ -10,7 +10,7 @@ The objectives to complete this homework include the following:
 * When the quiz is finished or the time runs out then the game is over
 * Initials are recorded along with score
 
-![Image of webpage](docs/images/Screenshot(25).png)
+![image of webpage](images\demo.png)
 
 View Live Webpage!
 https://alec74.github.io/codeQuiz/
