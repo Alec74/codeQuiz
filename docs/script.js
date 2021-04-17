@@ -11,42 +11,51 @@ var btnA = document.querySelector(".btnA");
 var btnB = document.querySelector(".btnB");
 var btnC = document.querySelector(".btnC");
 var btnD = document.querySelector(".btnD");
+var title = document.querySelector(".title");
+var nameScores = '';
 
+var timer;
+var timerCount = 20;
+var correct = 0;
 var score = 0;
-var chosen = "";
-
 var questionNum = 0;
-var correct = false;
-var wrong = 0;
-
-var clickA = false;
-var clickB = false;
-var clickC = false;
-var clickD = false;
 
 var quizQ = ["What method stores user input information to be referenced later?",
     "What do you use to create a timer?", "What can you use to select elements in the HTML using javascript?"];
 
 var answers = [" .localStorage()", " .stringify()", " .function()", " .setInterval()",
-    " .function()", " .countDown()", " .setInterval()", " #timer", 
+    " .function()", " .countDown()", " .setInterval()", " #timer",
     " .getElementById()", " .getElementByClassName()", " .querySelector()", " All of the above"];
 
 
-var timer;
-var timerCount = 120;
 
-function init() {
 
-    startBtn.addEventListener("click", function () {
-        startTimer();
-        userA();
-    });
+function setScores() {
+    localStorage.setItem("Players", nameScores)
+}
+function getScores(){
+    var s1 = localStorage.getItem()
+}
+
+function startGame() {
+    startBtn.disabled = false;
+    timerCount = 20;
+
+    score = 0;
+    questionNum = 0;
+    title.textContent = "Javascript Quiz"
+    startTimer();
+    updateQA()
+    // userA();
+    setScores()
+
 
 }
 
 function updateQA() {
+    console.log(questionNum)
     // questionNum++;
-    
+
     var answerNum = questionNum;
     if (questionNum === 0) {
         questionEl.textContent = quizQ[questionNum];
@@ -60,96 +69,114 @@ function updateQA() {
         b.textContent = answers[answerNum + 4];
         c.textContent = answers[answerNum + 5];
         d.textContent = answers[answerNum + 6];
-    }  else if (questionNum === 2) {
+    } else if (questionNum === 2) {
         questionEl.textContent = quizQ[questionNum];
         a.textContent = answers[answerNum + 6];
         b.textContent = answers[answerNum + 7];
         c.textContent = answers[answerNum + 8];
         d.textContent = answers[answerNum + 9];
-    }};
-
-
-function userA() {
-    updateQA()
-    
-    btnA.addEventListener("click", function () {
-        if (questionNum === 0) {
-            score += 100;
-            questionNum++;
-            updateQA();
-        } else if (questionNum === 1) {
-            score -= 50;
-            timerCount -= 15;
-            questionNum++
-            updateQA();
-        } else if (questionNum === 2) {
-            score -= 50;
-            timerCount -= 15;
-            questionNum++
-            updateQA();
-        }
-    });
-    btnB.addEventListener("click", function () {
-        if (questionNum === 0) {
-            score -= 50;
-            timerCount -= 15;
-            questionNum++
-            updateQA();
-        } else if (questionNum === 1) {
-            score -= 50;
-            timerCount -= 15;
-            questionNum++
-            updateQA();
-        } else if (questionNum === 1) {
-            score -= 50;
-            timerCount -= 15;
-            questionNum++
-            updateQA();
-        }
-    });
-    btnC.addEventListener("click", function () {
-        if (questionNum === 0) {
-            score -= 50;
-            timerCount -= 15;
-            questionNum++
-            updateQA();
-        } else if (questionNum === 1) {
-            score += 100;
-            questionNum++;
-            updateQA();
-        } else if (questionNum === 1) {
-            score -= 50;
-            timerCount -= 15;
-            questionNum++
-            updateQA();
-        }
-    });
-
-    btnD.addEventListener("click", function () {
-        if (questionNum === 0) {
-            score -= 50;
-            timerCount -= 15;
-            questionNum++
-            updateQA();
-        } else if (questionNum === 1) {
-            score -= 50;
-            timerCount -= 15;
-            questionNum++
-            updateQA();
-        } else if (questionNum === 1) {
-            score += 100;
-            questionNum++;
-            updateQA();
-        }
-    });
+    }
 };
+
+
+// function userA() {
+    
+//     console.log(questionNum)
+//     btnA.addEventListener("click", function () {
+//         if (questionNum === 0) {
+//             score += 100;
+//             questionNum = 1;
+//             updateQA();
+//         } else if (questionNum === 1) {
+//             score -= 50;
+//             timerCount -= 2;
+//             questionNum = 2;
+//             updateQA();
+//         } else if (questionNum === 2) {
+//             score -= 50;
+//             timerCount -= 2;
+//             // questionNum++
+//             updateQA();
+//             end()
+//         }
+//     });
+//     btnB.addEventListener("click", function () {
+//         if (questionNum === 0) {
+//             score -= 50;
+//             timerCount -= 2;
+//             questionNum = 1;
+//             updateQA();
+//         } else if (questionNum === 1) {
+//             score -= 50;
+//             timerCount -= 2;
+//             questionNum = 2
+//             updateQA();
+//         } else if (questionNum === 2) {
+//             score -= 50;
+//             timerCount -= 2;
+//             // questionNum++
+//             updateQA();
+//             end()
+//         }
+//     });
+//     btnC.addEventListener("click", function () {
+//         if (questionNum === 0) {
+//             score -= 50;
+//             timerCount -= 2;
+//             questionNum = 1;
+//             updateQA();
+//         } else if (questionNum === 1) {
+//             score += 100;
+//             questionNum = 2;
+//             updateQA();
+//         } else if (questionNum === 2) {
+//             score -= 50;
+//             timerCount -= 2;
+//             // questionNum++
+//             updateQA();
+//             end()
+//         }
+//     });
+
+//     btnD.addEventListener("click", function () {
+//         if (questionNum === 0) {
+//             score -= 50;
+//             timerCount -= 2;
+//             questionNum = 1;
+//             updateQA();
+//         } else if (questionNum === 1) {
+//             score -= 50;
+//             timerCount -= 2;
+//             questionNum = 2;
+//             updateQA();
+//         } else if (questionNum === 2) {
+//             score += 100;
+//             // questionNum++;
+//             updateQA();
+//             end()
+//         }
+//     });
+// };
 // view scores
 
 
-
+function end() {
+    clearInterval(timer);
+    title.textContent = "Game Over";
+    var name = prompt("Your Name: ");
+    nameScores = name + " Score: " + score + " ";
+    
+    startBtn.disabled=false;
+    setScores();
+    var storedNames = localStorage.getItem("Players");
+    viewScores.append(storedNames);
+};
 
 
 function startTimer() {
+    // timer;
+    timerCount = 20;
+    questionNum = 0;
     startBtn.disabled = true;
     timer = setInterval(function () {
         timerCount--;
@@ -160,14 +187,92 @@ function startTimer() {
                 clearInterval(timer);
             }
         }
-        if (timerCount === 0) {
+        if (timerCount <= 0) {
             // Time ran out
             clearInterval(timer);
+            end()
         }
     }, 1000)
 }
 
 
+
 // updateQA()
-init()
+// startGame()
+startBtn.addEventListener("click", startGame);
 // console.log(questionNum)
+
+btnA.addEventListener("click", function () {
+    if (questionNum === 0) {
+        score += 100;
+        questionNum = 1;
+        updateQA();
+    } else if (questionNum === 1) {
+        score -= 50;
+        timerCount -= 2;
+        questionNum = 2;
+        updateQA();
+    } else if (questionNum === 2) {
+        score -= 50;
+        timerCount -= 2;
+        // questionNum++
+        updateQA();
+        end()
+    }
+});
+btnB.addEventListener("click", function () {
+    if (questionNum === 0) {
+        score -= 50;
+        timerCount -= 2;
+        questionNum = 1;
+        updateQA();
+    } else if (questionNum === 1) {
+        score -= 50;
+        timerCount -= 2;
+        questionNum = 2
+        updateQA();
+    } else if (questionNum === 2) {
+        score -= 50;
+        timerCount -= 2;
+        // questionNum++
+        updateQA();
+        end()
+    }
+});
+btnC.addEventListener("click", function () {
+    if (questionNum === 0) {
+        score -= 50;
+        timerCount -= 2;
+        questionNum = 1;
+        updateQA();
+    } else if (questionNum === 1) {
+        score += 100;
+        questionNum = 2;
+        updateQA();
+    } else if (questionNum === 2) {
+        score -= 50;
+        timerCount -= 2;
+        // questionNum++
+        updateQA();
+        end()
+    }
+});
+
+btnD.addEventListener("click", function () {
+    if (questionNum === 0) {
+        score -= 50;
+        timerCount -= 2;
+        questionNum = 1;
+        updateQA();
+    } else if (questionNum === 1) {
+        score -= 50;
+        timerCount -= 2;
+        questionNum = 2;
+        updateQA();
+    } else if (questionNum === 2) {
+        score += 100;
+        // questionNum++;
+        updateQA();
+        end()
+    }
+});
