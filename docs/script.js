@@ -21,11 +21,15 @@ var score = 0;
 var questionNum = 0;
 
 var quizQ = ["What method stores user input information to be referenced later?",
-    "What do you use to create a timer?", "What can you use to select elements in the HTML using javascript?"];
+    "What do you use to create a timer?", 
+    "What can you use to select elements in the HTML using javascript?",
+    "What is '.this' in javascript?"];
 
 var answers = [" .localStorage()", " .stringify()", " .function()", " .setInterval()",
     " .function()", " .countDown()", " .setInterval()", " #timer",
-    " .getElementById()", " .getElementByClassName()", " .querySelector()", " All of the above"];
+    " .getElementById()", " .getElementByClassName()", " .querySelector()", 
+    " All of the above", "Asks you about '.that'", "Creates a '.that'", 
+    "References object in immediate scope", "References '.localStorage' for object"];
 
 
 
@@ -48,8 +52,6 @@ function startGame() {
     updateQA()
     // userA();
     setScores()
-
-
 }
 
 function updateQA() {
