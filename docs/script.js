@@ -88,7 +88,10 @@ function end() {
     startBtn.disabled=false;
     setScores();
     var storedNames = localStorage.getItem("Players");
-    viewScores.append(storedNames);
+    var liEl = document.createElement('li');
+    liEl.setAttribute('class', 'dropdown-item');
+    liEl.textContent = storedNames;
+    viewScores.append(liEl);
 };
 
 
