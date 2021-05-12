@@ -89,7 +89,7 @@ function updateQA() {
 
 function end() {
     clearInterval(timer);
-    title.textContent = "Game Over";
+    title.textContent = "Quiz has Ended";
     var name = prompt("Your Name: ");
     nameScores = name + " Score: " + score + " ";
     
