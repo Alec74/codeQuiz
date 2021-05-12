@@ -1,6 +1,9 @@
 # Javascript Code Quiz
+View Live Webpage!
+https://alec74.github.io/codeQuiz/
 
-For this project I was given the task of creating a quiz about coding using HTML, CSS and Javascript while starting from scratch. This project will ask the user to answer a series of timed multiple choice questions about different aspects of coding.
+
+For this project I was given the task of creating a quiz about coding using HTML, CSS and Javascript while starting from scratch. This project will ask the user to answer a series of timed multiple choice questions about different aspects of Javascript coding.
 
 The objectives to complete this project include the following:
 * A working start button that begins the quiz and cannot be clicked during it
@@ -26,8 +29,6 @@ Middle of Quiz
 End of Quiz
 ![image of webpage end](images/demoFinish.png)
 
-View Live Webpage!
-https://alec74.github.io/codeQuiz/
 
 Contact Information:
 * Github: https://github.com/Alec74
