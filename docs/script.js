@@ -77,6 +77,12 @@ function updateQA() {
         b.textContent = answers[answerNum + 7];
         c.textContent = answers[answerNum + 8];
         d.textContent = answers[answerNum + 9];
+    } else if (questionNum === 3) {
+        questionEl.textContent = quizQ[questionNum];
+        a.textContent = answers[answerNum + 9];
+        b.textContent = answers[answerNum + 10];
+        c.textContent = answers[answerNum + 11];
+        d.textContent = answers[answerNum + 12];
     }
 };
 
@@ -139,7 +145,12 @@ btnA.addEventListener("click", function () {
     } else if (questionNum === 2) {
         score -= 50;
         timerCount -= 2;
-        // questionNum++
+        questionNum = 3;
+        updateQA();
+    } else if (questionNum === 3) {
+        score -= 50;
+        timerCount -= 2;
+        // questionNum = 3;
         updateQA();
         end()
     }
@@ -158,7 +169,12 @@ btnB.addEventListener("click", function () {
     } else if (questionNum === 2) {
         score -= 50;
         timerCount -= 2;
-        // questionNum++
+        questionNum = 3;
+        updateQA();
+    } else if (questionNum === 3) {
+        score -= 50;
+        timerCount -= 2;
+        // questionNum = 3;
         updateQA();
         end()
     }
@@ -176,9 +192,13 @@ btnC.addEventListener("click", function () {
     } else if (questionNum === 2) {
         score -= 50;
         timerCount -= 2;
-        // questionNum++
+        questionNum = 3;
         updateQA();
-        end()
+    } else if (questionNum === 3) {
+        score += 100;
+        // questionNum = 3;
+        updateQA();
+        end();
     }
 });
 
@@ -195,7 +215,12 @@ btnD.addEventListener("click", function () {
         updateQA();
     } else if (questionNum === 2) {
         score += 100;
-        // questionNum++;
+        questionNum = 3;
+        updateQA();
+    } else if (questionNum === 3) {
+        score -= 50;
+        timerCount -= 2;
+        // questionNum = 3;
         updateQA();
         end()
     }
