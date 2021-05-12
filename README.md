@@ -1,8 +1,8 @@
-# Unit 4 Homwork
+# Code Quiz
 
-For this weeks homework I was given the task of creating a quiz about coding using HTML, CSS and Javascript while starting from scratch.
+For this project I was given the task of creating a quiz about coding using HTML, CSS and Javascript while starting from scratch. This project will ask the user to answer a series of timed multiple choice questions about different aspects of coding.
 
-The objectives to complete this homework include the following:
+The objectives to complete this project include the following:
 * A working start button that begins the quiz and cannot be clicked during it
 * When the quiz begins a timer starts to countdown
 * After answering a question another question is presented
@@ -10,7 +10,19 @@ The objectives to complete this homework include the following:
 * When the quiz is finished or the time runs out then the game is over
 * Initials are recorded along with score
 
+Technologies used:
+* HTML
+* CSS
+* Javascript
+* Bootstrap
+* Google Fonts
+
 ![image of webpage](images/demo.png)
 
 View Live Webpage!
 https://alec74.github.io/codeQuiz/
+
+Contact Information:
+* Github: https://github.com/Alec74
+* Email: alecmcglone@gmail.com
+* LinkedIn: https://www.linkedin.com/in/alec-mcglone-900904206/
