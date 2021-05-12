@@ -1,4 +1,4 @@
-# Code Quiz
+# Javascript Code Quiz
 
 For this project I was given the task of creating a quiz about coding using HTML, CSS and Javascript while starting from scratch. This project will ask the user to answer a series of timed multiple choice questions about different aspects of coding.
 
@@ -17,7 +17,14 @@ Technologies used:
 * Bootstrap
 * Google Fonts
 
-![image of webpage](images/demo.png)
+Welcome Screen
+![image of webpage start](images/demoStart.png)
+
+Middle of Quiz
+![image of webpage middle](images/demoMiddle.png)
+
+End of Quiz
+![image of webpage end](images/demoFinish.png)
 
 View Live Webpage!
 https://alec74.github.io/codeQuiz/
